@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-v2
+  namespace: manoj
+  annotations:
+    kubernetes.io/change-cause: "image tag updating to caddynline-perl for nginx"
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: c1
+        image: caddy

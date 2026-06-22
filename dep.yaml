@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-manoj
+  namespace: manoj
+  annotations:
+    kubernetes.io/change-cause: "first revision"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: c1
+        image: nginx
+      - name: c2
+        image: redis:8.6-trixie

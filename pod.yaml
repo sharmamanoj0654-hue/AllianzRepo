@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: yaml-pod
+  namespace: manoj
+spec:
+  containers:
+  - name: c1
+    image: caddy
+  - name: c2
+    image: redis
